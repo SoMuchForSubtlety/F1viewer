@@ -157,6 +157,9 @@ func (f *F1TV) GetPageContent(id PageID) ([]TopContainer, []RemoteContent, error
 				}
 				title := contentContainer.Metadata.Label
 				if title == "" {
+					title = contentContainer.Metadata.TitleBrief
+				}
+				if title == "" {
 					title = contentContainer.Metadata.EmfAttributes.GlobalTitle
 				}
 				if title == "" {
